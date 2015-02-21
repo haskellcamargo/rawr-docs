@@ -17,12 +17,11 @@ Static typing
 
 Different from Java, where primitives aren't objects, here each type is literally a class and each value of a rawr-defined variable is a pure object. As much as Alan Kays definition of object-orientation, the objects have behaviors and Rawr also allows method-chaining in order to make the things and calls easier. You can also restrict function parameters to specified types or derived types to assert type-safety:
 
-.. literal-include:: example.php
+.. literalinclude:: example.php
    :language: php
    :linenos:
    
-.. code-block::php
-   :linenos:
+.. code-block:: php
    $age = Int (18);
    $ableToDrive = Lambda (
      /** :: Int -> Bool */
@@ -33,14 +32,14 @@ Different from Java, where primitives aren't objects, here each type is literall
     
    $ableToDrive($age) -> inspect (); // Object (bool);
 
-Some types are derived, this is, as example, `Int` and `Float` are derived from `Num` type, therefore we can make a function that accepts any of them as a parameter:
+Some types are derived, this is, as example, ``Int`` and ``Float`` are derived from ``Num`` type, therefore we can make a function that accepts any of them as a parameter:
 
-```php
+``````php
 $sqrtOf = Lambda (
   /** :: Num -> Float */
   function (Num $n) { return $n -> sqrt (); }
 );
-```
+``````
 
 Rawr uses a Haskell-like type-system, you can use almost of Haskell type definitions here, with PHP.
 
@@ -50,7 +49,7 @@ Functional programming
 
 Rawr implements several functional concepts, such as function-composition, pattern-matching, monads or algebraic-data-types.
 
-```php
+``````php
 $multiplyTwo = Lambda (
   /** :: Int -> Int */
   function (Int $n) {
@@ -65,24 +64,24 @@ $multiplyThree = Lambda (
 
 $multiplySix = $multiplyTwo -> o ($multiplyThree);
 $multiplySix(Int (7)) -> toString () -> putStrLn (); // => 42
-```
+``````
 
 You can easily handle lists by chaining methods:
 
-```php
+``````php
 $myList = § (1, '...', 10) -> of ("Data.Num.Int")
 -> map (Lambda (function (Int $n) { return $n -> times (Int (2)); }))
 -> filter (Lambda (function (Int $n) { return $n -> isEven (); })
 -> reduce ("+");
-```
+``````
 
 ----------------------------------
 Smalltalk-based object orientation
 ----------------------------------
 
-In Rawr, almost everything is an object. The behaviors of these objects are determined according to their types, e.g.: objects of `Str` class can have a side-effect behavior called `putStrLn` that outputs its content to screen, as much as objects of bool atoms, `true` and `false` can have behaviors like `ifTrue` and `ifFalse`. You don't use conditionals, loops or other imperative structures. You enjoy the pureness of well-designed languages to work with your computations:
+In Rawr, almost everything is an object. The behaviors of these objects are determined according to their types, e.g.: objects of ``Str`` class can have a side-effect behavior called ``putStrLn`` that outputs its content to screen, as much as objects of bool atoms, ``true`` and ``false`` can have behaviors like ``ifTrue`` and ``ifFalse``. You don't use conditionals, loops or other imperative structures. You enjoy the pureness of well-designed languages to work with your computations:
 
-```php
+``````php
 $oddNumTil100 = (new Collection (1, 3 '...', 100)) -> of ("Data.Num.Int")
 -> filter (Lambda (function (Int $n) { return $n -> greaterOrEq (50); }))
 -> each   (Lambda (function (Int $n) { Show ($n) -> putStrLn (); }));
@@ -90,15 +89,15 @@ $oddNumTil100 = (new Collection (1, 3 '...', 100)) -> of ("Data.Num.Int")
 $magicHappens = $oddNumTil100 -> contains (Int (7))
 -> ifTrue (Lambda (function () { Str ("Yes, it containts 7.") -> putStrLn (); }))
 -> ifFalse (Lambda (function () { Str ("No, there is no 7.") -> putStrLn (); }));
-```
+``````
 
 -----------------------------------------------
 Monads for work with computations that may fail
 -----------------------------------------------
 
-Rawr implements also most of Haskell built-in monads, such as `Maybe` and `Either`. You can chain operations and work with computations that may fail, you can also apply pattern-matching to check for your results. In Rawr, you use no exceptions, there is no errors. You can have a data-type for errors in `Data.Error` that is returned when something goes wrong. You can match its pattern.
+Rawr implements also most of Haskell built-in monads, such as ``Maybe`` and ``Either``. You can chain operations and work with computations that may fail, you can also apply pattern-matching to check for your results. In Rawr, you use no exceptions, there is no errors. You can have a data-type for errors in ``Data.Error`` that is returned when something goes wrong. You can match its pattern.
 
-```php
+``````php
 $numberOne  = Int (1);
 $numberZero = Int (0);
 # Here operation can be Just _ or Nothing.
@@ -125,7 +124,7 @@ Match ($eitherOperation) -> withConstr ([
 , otherwise             => function () { Str ("Error. Division by 0."); }
 ]);
 
-```
+``````
 
 ---------------------------
 Prototype-based-programming
@@ -133,7 +132,7 @@ Prototype-based-programming
 
 Rawr also supports a Self/Javascript based prototype programming, in a much more expressive way than class-based-programming does, and also provides first class data-types for better data-abstraction:
 
-```php
+``````php
 Type ("Employee") -> where (function ($type) {
   $type -> derives (String);
   $type -> with    (["Programmer"
@@ -180,4 +179,4 @@ $sophia -> with ([
 
 $sophia -> greet ();
 $sophia -> sayPosition ();
-```
+``````
