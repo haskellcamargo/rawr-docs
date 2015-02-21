@@ -20,17 +20,6 @@ Different from Java, where primitives aren't objects, here each type is literall
 .. literalinclude:: example.php
    :language: php
    :linenos:
-   
-.. code-block:: python
-   :emphasize-lines: 3,5
-
-   def some_function():
-       interesting = False
-       print 'This line is highlighted.'
-       print 'This one is not...'
-       print '...but this one is.'
-    
-   $ableToDrive($age) -> inspect (); // Object (bool);
 
 Some types are derived, this is, as example, ``Int`` and ``Float`` are derived from ``Num`` type, therefore we can make a function that accepts any of them as a parameter:
 
