@@ -21,14 +21,14 @@ Different from Java, where primitives aren't objects, here each type is literall
    :language: php
    :linenos:
    
-.. code-block:: php
-   $age = Int (18);
-   $ableToDrive = Lambda (
-     /** :: Int -> Bool */
-     function (Int $age) {
-       return $age -> greaterOrEq (18);
-     }
-   );
+.. code-block:: python
+   :emphasize-lines: 3,5
+
+   def some_function():
+       interesting = False
+       print 'This line is highlighted.'
+       print 'This one is not...'
+       print '...but this one is.'
     
    $ableToDrive($age) -> inspect (); // Object (bool);
 
