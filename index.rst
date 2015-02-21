@@ -17,16 +17,17 @@ Static typing
 
 Different from Java, where primitives aren't objects, here each type is literally a class and each value of a rawr-defined variable is a pure object. As much as Alan Kays definition of object-orientation, the objects have behaviors and Rawr also allows method-chaining in order to make the things and calls easier. You can also restrict function parameters to specified types or derived types to assert type-safety:
 
-```php
-$age = Int (18);
-$ableToDrive = Lambda (
-  /** :: Int -> Bool */
-  function (Int $age) {
-    return $age -> greaterOrEq (18);
-  }
-);
-
-$ableToDrive($age) -> inspect (); // Object (bool);
+.. code-block::php
+   :linenos:
+   $age = Int (18);
+   $ableToDrive = Lambda (
+     /** :: Int -> Bool */
+     function (Int $age) {
+       return $age -> greaterOrEq (18);
+     }
+   );
+    
+    $ableToDrive($age) -> inspect (); // Object (bool);
 ```
 
 Some types are derived, this is, as example, `Int` and `Float` are derived from `Num` type, therefore we can make a function that accepts any of them as a parameter:
