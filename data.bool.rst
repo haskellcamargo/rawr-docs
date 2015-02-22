@@ -68,3 +68,13 @@ Returns if the value of this object is greater than the received value.
   <?php
     Bool (False) -> greaterThan (Bool (True)); # => Bool (False)
 
+.. function:: ifTrue :: (Bool, Func) -> Bool
+
+The closure passed as parameter is called if the value of this object is ``Bool (True)``.
+
+.. code-block:: php
+
+  <?php
+    Bool (True) -> ifTrue (Lambda (function () {
+      Str ("Pass") -> putStrLn ();
+    })); # => Bool (True)
