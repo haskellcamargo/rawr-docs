@@ -40,9 +40,20 @@ Equivalent to Haskell's ``>>=`` operator. Its first argument is a value in a mon
 Extracts the element out of a ``Just`` and returns an error if its argument is ``Nothing``.
 
 .. code-block:: php
+
   <?php
     Maybe (Float (3.14))
     -> fromJust (); # => Float (3.14)
+
+.. function:: fromMaybe :: (Maybe a, a) -> a
+
+Takes a ``Maybe`` value and a default value. If the ``Maybe`` is ``Nothing``, it returns the default values; otherwise, it returns the value contained in the ``Maybe``.
+
+.. code-block:: php
+   
+   <?php
+     Maybe (null)
+     -> maybe (Str ("Pass")); # => Str ("Pass")
 
 .. function:: isJust :: Maybe a -> Bool
 
