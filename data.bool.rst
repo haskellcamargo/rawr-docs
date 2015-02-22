@@ -34,6 +34,18 @@ Returns ``Bool (True)`` if any of the values, of the object, or of the received 
 
 Comparison of the difference of two objects or values of **same** type.
 
+.. code-block:: php
+
    <?php
      Bool (True) -> diff (Bool (True));  # => Bool (False)
      Bool (True) -> diff (Bool (False)); # => Bool (True)
+
+.. function:: eq :: (Bool, Bool) -> Bool
+
+Comparison of the equality of two objects or values of **same** type.
+
+.. code-block:: php
+   
+   <?php
+     Bool (True) -> diff (Bool (True));  # => Bool (True)
+     Bool (True) -> diff (Bool (False)); # => Bool (False)
