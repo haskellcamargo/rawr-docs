@@ -61,34 +61,9 @@ Monads for work with computations that may fail
 
 Rawr implements also most of Haskell built-in monads, such as ``Maybe`` and ``Either``. You can chain operations and work with computations that may fail, you can also apply pattern-matching to check for your results. In Rawr, you use no exceptions, there is no errors. You can have a data-type for errors in ``Data.Error`` that is returned when something goes wrong. You can match its pattern.
 
-``````php
-$numberOne  = Int (1);
-$numberZero = Int (0);
-# Here operation can be Just _ or Nothing.
-$operation  = Maybe ($numberOne -> div ($numberZero));
-
-# Applying identity and chaining computations as much as "programmable semicolons".
-$operation -> bind (function (Int $res) { return $res });
-
-# enum Maybe<T> { Just<T>, Nothing }
-Match ($operation) -> withConstr ([
-  "Data.Maybe.Just x"  => function ($x) { Str ("We got a result: \(0).") -> format ($res -> fromJust ()) -> putStrLn (); }
-, "Data.Maybe.Nothing" => function () { Str ("Operation failure.") -> putStrLn (); }
-]);
-
-$eitherOperation = Either ($numberOne -> div ($numberZero));
-$eitherOperation -> either (
-  function ($_) { Str ("Error. Division by 0."); }
-, function (Int $x) { Str ("Value: \(0)") -> format ($x) -> putStrLn (); }
-);
-
-# enum Either<T> { Left<T>, Right<T> }
-Match ($eitherOperation) -> withConstr ([
-  "Data.Either.Right x" => function ($x) { Str ("Value: \(0)") -> format ($x -> val ()) -> putStrLn (); }
-, otherwise             => function () { Str ("Error. Division by 0."); }
-]);
-
-``````
+.. literalinclude:: introduction/examples/monads.php
+   :language: php
+   :linenos:
 
 ---------------------------
 Prototype-based-programming
