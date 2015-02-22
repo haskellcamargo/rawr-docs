@@ -8,13 +8,4 @@ Contents:
   :maxdepth: 2
 
   introduction
-  require
-  setup
-  config
-  user
-  faq
-  developers
-  vendors
-  copyright
-  credits
-  glossary
+  datatypes
