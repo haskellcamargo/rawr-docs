@@ -51,15 +51,9 @@ Smalltalk-based object orientation
 
 In Rawr, almost everything is an object. The behaviors of these objects are determined according to their types, e.g.: objects of ``Str`` class can have a side-effect behavior called ``putStrLn`` that outputs its content to screen, as much as objects of bool atoms, ``true`` and ``false`` can have behaviors like ``ifTrue`` and ``ifFalse``. You don't use conditionals, loops or other imperative structures. You enjoy the pureness of well-designed languages to work with your computations:
 
-``````php
-$oddNumTil100 = (new Collection (1, 3 '...', 100)) -> of ("Data.Num.Int")
--> filter (Lambda (function (Int $n) { return $n -> greaterOrEq (50); }))
--> each   (Lambda (function (Int $n) { Show ($n) -> putStrLn (); }));
-
-$magicHappens = $oddNumTil100 -> contains (Int (7))
--> ifTrue (Lambda (function () { Str ("Yes, it containts 7.") -> putStrLn (); }))
--> ifFalse (Lambda (function () { Str ("No, there is no 7.") -> putStrLn (); }));
-``````
+.. literalinclude:: introduction/examples/object_orientation.php
+   :language: php
+   :linenos:
 
 -----------------------------------------------
 Monads for work with computations that may fail
