@@ -10,7 +10,7 @@ A ``Bool`` type can hold two primitive values: ``True`` and ``False``. When star
 Operations
 ----------
 
-.. function:: main(x)
-   :module: Data.Bool
+.. function:: and :: (Bool, Bool) -> Bool
+   :module: Data\Bool
 
 Main function
