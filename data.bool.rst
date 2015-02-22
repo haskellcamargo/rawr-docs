@@ -12,3 +12,5 @@ Operations
 
 .. function:: main(x)
    :module: Data.Bool
+
+Main function
