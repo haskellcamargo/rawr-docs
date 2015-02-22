@@ -70,7 +70,7 @@ Returns if the value of this object is greater than the received value.
 
 .. function:: ifTrue :: (Bool, Func) -> Bool
 
-The closure passed as parameter is called if the value of this object is ``Bool (True)``.
+The closure passed as parameter is called if the value of this object is ``Bool (True)``. After, it returns the value by itself to allow method-chaining.
 
 .. code-block:: php
 
@@ -78,3 +78,53 @@ The closure passed as parameter is called if the value of this object is ``Bool 
     Bool (True) -> ifTrue (Lambda (function () {
       Str ("Pass") -> putStrLn ();
     })); # => Bool (True)
+
+.. function:: ifFalse :: (Bool, Func) -> Bool
+
+the closure passed as parameter is called if the value of this object is ``Bool (False)``. After, it returns the value by itself to allow method-chaining.
+
+.. code-block:: php
+
+  <?php
+    Bool (False) -> ifFalse (Lambda (function () {
+      Str ("None") -> putStrLn ();
+    })); # => Bool (False)
+
+.. function:: lesserOrEq :: (Bool, Bool) -> Bool
+
+Returns if the value of this object is lesser or equal to the received value.
+
+.. code-block:: php
+
+  <?php
+    Bool (False) -> lesserOrEq (Bool (True)); # => Bool (True)
+
+.. function:: lesserThan :: (Bool, Bool) -> Bool
+
+Returns if the value of this object is lesser than the received value.
+
+.. code-block:: php
+
+  <?php
+    Bool (True) -> lesserThan (Bool (False)); # => Bool (False)
+
+.. function:: not :: Bool -> Bool
+
+Reverses the value of a boolean object.
+
+.. code-block:: php
+
+  <?php
+    Bool (True) -> not ();  # => Bool (False)
+    Bool (False) -> not (); # => Bool (True)
+
+.. function:: otherwise :: Bool -> Bool
+
+Alias for ``ifFalse``.
+
+.. code-block:: php
+
+  <?php
+    Bool (True) 
+    -> ifTrue (Lambda (function () {}))
+    -> otherwise (Lambda (function () {})); # Bool (True)
