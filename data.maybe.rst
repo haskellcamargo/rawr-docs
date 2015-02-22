@@ -12,8 +12,8 @@ The ``Maybe`` type is also a monad. It is a simple kind of error monad, where al
 Constructors
 ------------
 
-* :ref:`data.maybe.just`
-* :ref:`data.maybe.nothing`
+* ``Data.Maybe.Just t``
+* ``Data.Maybe.Nothing``
 
 ----------
 Operations
