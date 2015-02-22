@@ -1,3 +1,22 @@
+Welcome to Rawr documentation!
+==============================
+
+.. toctree::
+  :maxdepth: 2
+
+  intro
+  require
+  setup
+  config
+  user
+  faq
+  developers
+  vendors
+  copyright
+  credits
+  glossary
+
+
 ===============
 Welcome to Rawr
 ===============
