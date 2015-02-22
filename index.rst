@@ -35,31 +35,15 @@ Functional programming
 
 Rawr implements several functional concepts, such as function-composition, pattern-matching, monads or algebraic-data-types.
 
-``````php
-$multiplyTwo = Lambda (
-  /** :: Int -> Int */
-  function (Int $n) {
-    return $n -> times (2);
-});
-
-$multiplyThree = Lambda (
-  /** :: Int -> Int */
-  function (Int $n) {
-    return $n -> times (3);
-});
-
-$multiplySix = $multiplyTwo -> o ($multiplyThree);
-$multiplySix(Int (7)) -> toString () -> putStrLn (); // => 42
-``````
+.. literalinclude:: introduction/examples/functional_programming.php
+   :language: php
+   :linenos:
 
 You can easily handle lists by chaining methods:
 
-``````php
-$myList = § (1, '...', 10) -> of ("Data.Num.Int")
--> map (Lambda (function (Int $n) { return $n -> times (Int (2)); }))
--> filter (Lambda (function (Int $n) { return $n -> isEven (); })
--> reduce ("+");
-``````
+.. literalinclude:: introduction/examples/functional_programming1.php
+   :language: php
+   :linenos:
 
 ----------------------------------
 Smalltalk-based object orientation
