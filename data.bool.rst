@@ -128,3 +128,20 @@ Alias for ``ifFalse``.
     Bool (True) 
     -> ifTrue (Lambda (function () {}))
     -> otherwise (Lambda (function () {})); # Bool (True)
+
+.. function:: thenElse :: (Bool, Func, Func) -> Bool
+
+Equivalent to ``iFtrue`` and ``ifFalse``.
+
+.. code-block:: php
+
+  <?php
+    Bool (False)
+    -> thenElse (
+      Lambda (function (/* Then */) {
+        Str ("...") -> putStrLn ();
+      })
+    , Lambda (function (/* Else */) {
+        Str ("!!!") -> putStrLn ();
+      })
+    ); # Bool (True)
