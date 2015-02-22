@@ -34,3 +34,22 @@ Equivalent to Haskell's ``>>=`` operator. Its first argument is a value in a mon
     -> bind (function ($val) {
          return $val -> inc ();
        }); # => Maybe Int (20)
+
+.. function:: fromJust :: Maybe a -> a
+
+Extracts the element out of a ``Just`` and returns an error if its argument is ``Nothing``.
+
+.. code-block:: php
+  <?php
+    Maybe (Float (3.14))
+    -> fromJust (); # => Float (3.14)
+
+.. function:: isJust :: Maybe a -> Bool
+
+Returns ``Bool (True)`` if its argument is of the form ``Just _``.
+
+.. code-block:: php
+
+  <?php
+    $name = Just (10);
+    $name -> isJust (); # => Bool (True);
