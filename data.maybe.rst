@@ -19,3 +19,18 @@ Constructors
 Operations
 ----------
 
+.. function:: bind :: (Maybe a, Func) -> Maybe b
+
+Equivalent to Haskell's ``>>=`` operator. Its first argument is a value in a monadic type, its second argument is a function that maps from the underlying type of the first argument to another monadic type, and its results is in that other monadic type.
+
+.. code-block:: php
+
+  <?php
+    $age = Maybe (Int (18));
+    $age 
+    -> bind (function ($val) {
+         return $val -> inc ();
+       }) 
+    -> bind (function ($val) {
+         return $val -> inc ();
+       }); # => Maybe Int (20)
