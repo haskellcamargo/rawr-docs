@@ -18,4 +18,6 @@ Returns ``Bool (True)`` if both the value of the object and the value of the rec
    :linenos:
 
    <?php
-     exemplo
+     Bool (True) -> _and (Bool (False)); # => Bool (False);
+     Bool (True) -> _and (Bool (True));  # => Bool (True);
+
