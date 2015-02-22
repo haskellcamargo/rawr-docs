@@ -15,9 +15,17 @@ Operations
 Returns ``Bool (True)`` if both the value of the object and the value of the received expression are true. Otherwise, false.
 
 .. code-block:: php
-   :linenos:
 
    <?php
-     Bool (True) -> _and (Bool (False)); # => Bool (False);
-     Bool (True) -> _and (Bool (True));  # => Bool (True);
+     Bool (True) -> _and (Bool (False)); # => Bool (False)
+     Bool (True) -> _and (Bool (True));  # => Bool (True)
 
+.. function:: _or :: (Bool, Bool) -> Bool
+
+Returns ``Bool (True)`` if any of the values, of the object, or of the received expression, are true. Otherwise, false.
+
+.. code-block:: php
+
+   <?php
+     Bool (False) -> _or (Bool (True));  # => Bool (True)
+     Bool (False) -> _or (Bool (False)); # => Bool (False)
