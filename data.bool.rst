@@ -29,3 +29,11 @@ Returns ``Bool (True)`` if any of the values, of the object, or of the received 
    <?php
      Bool (False) -> _or (Bool (True));  # => Bool (True)
      Bool (False) -> _or (Bool (False)); # => Bool (False)
+
+.. function:: diff :: (Bool, Bool) -> Bool
+
+Comparison of the difference of two objects or values of **same** type.
+
+   <?php
+     Bool (True) -> diff (Bool (True));  # => Bool (False)
+     Bool (True) -> diff (Bool (False)); # => Bool (True)
