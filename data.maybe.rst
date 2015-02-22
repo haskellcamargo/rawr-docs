@@ -86,3 +86,15 @@ Takes a default value, a function and, of course, a ``Maybe`` value. If the ``Ma
     -> maybe (Int (10), Lambda (function (Int $just) {
       return $just -> sqrt ();
     })); # => Int (10);
+
+.. function:: toList :: Maybe a -> Collection
+
+Returns an empty list when given ``Nothing`` or a singleton list when not given ``Nothing``.
+
+.. code-block:: php
+
+  <?php
+    Nothing ()
+    -> toList (); # Collection ([])
+    Just (Int (1))
+    -> toList (); # Collection ([1]) of Int
