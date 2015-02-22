@@ -49,3 +49,12 @@ Comparison of the equality of two objects or values of **same** type.
    <?php
      Bool (True) -> diff (Bool (True));  # => Bool (True)
      Bool (True) -> diff (Bool (False)); # => Bool (False)
+
+.. function:: greaterOrEq :: (Bool, Bool) -> Bool
+
+Returns if the value of this object is greater or equal to the received value.
+
+.. code-block:: php
+
+    <?php
+      Bool (True) -> greaterOrEq (Bool (False)); # => Bool (True);
