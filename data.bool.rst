@@ -57,4 +57,14 @@ Returns if the value of this object is greater or equal to the received value.
 .. code-block:: php
 
     <?php
-      Bool (True) -> greaterOrEq (Bool (False)); # => Bool (True);
+      Bool (True) -> greaterOrEq (Bool (False)); # => Bool (True)
+
+.. function:: greaterThan :: (Bool, Bool) -> Bool
+
+Returns if the value of this object is greater than the received value.
+
+.. code-block:: php
+
+  <?php
+    Bool (False) -> greaterThan (Bool (True)); # => Bool (False)
+
