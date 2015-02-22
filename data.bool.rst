@@ -10,7 +10,12 @@ A ``Bool`` type can hold two primitive values: ``True`` and ``False``. When star
 Operations
 ----------
 
-.. function:: and :: (Bool, Bool) -> Bool
-   :module: Data\Bool
+.. function:: _and :: (Bool, Bool) -> Bool
 
-Main function
+Returns ``Bool (True)`` if both the value of the object and the value of the received expression are true. Otherwise, false.
+
+.. code-block:: php
+   :linenos:
+
+   <?php
+     exemplo
