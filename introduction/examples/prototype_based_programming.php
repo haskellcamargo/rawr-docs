@@ -6,13 +6,13 @@
                      , "DBA"        => "Database administrator"]);
   });
 
-  # Type Dollars that derives Maybe and Float and is Nothing() by default
-  Type ("Dollars") -> derives ([Maybe, Float]) -> def (Nothing ());
+  # Type Dollars that derives Float and is Nothing() by default
+  Type ("Dollars") -> derives (Float) -> def (Nothing ());
 
   $worker = Object ([
-    $name => String
-  , $age  => Int
-  , $salary => Dollars
+    $name     => String
+  , $age      => Int
+  , $salary   => Maybe (Dollars)
   , $position => Employee
   ]);
 
