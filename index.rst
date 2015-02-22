@@ -1,10 +1,12 @@
 Welcome to Rawr documentation!
 ==============================
 
+Contents:
+
 .. toctree::
   :maxdepth: 2
 
-  intro
+  introduction
   require
   setup
   config
