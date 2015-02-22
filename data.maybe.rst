@@ -63,4 +63,26 @@ Returns ``Bool (True)`` if its argument is of the form ``Just _``.
 
   <?php
     $name = Just (10);
-    $name -> isJust (); # => Bool (True);
+    $name -> isJust (); # => Bool (True)
+
+.. function:: isNothing :: Maybe a -> Bool
+
+Returns ``Bool (True)`` if its arguments is of the form ``Nothing``.
+
+.. code-block:: php
+
+  <?php
+    $name = Nothing ();
+    $name -> isNothing (); # => Bool (True)
+
+.. function:: maybe :: (Maybe a, b, Func) -> b
+
+Takes a default value, a function and, of course, a ``Maybe`` value. If the ``Maybe`` value is ``Nothing``, the function returns the default value. Otherwise, it applies the function to the value inside the ``Just`` and returns the result.
+
+.. code-block:: php
+
+  <?php
+    Maybe (null)
+    -> maybe (Int (10), Lambda (function (Int $just) {
+      return $just -> sqrt ();
+    })); # => Int (10);
