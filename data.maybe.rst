@@ -8,3 +8,14 @@ A ``Maybe`` type encapsulates an optional value. A value of type ``Maybe a`` eit
 
 The ``Maybe`` type is also a monad. It is a simple kind of error monad, where all errors are represented by ``Nothing``. A richer error monad can be built using the ``Either`` (``Data.Either``) type. 
 
+------------
+Constructors
+------------
+
+* :ref:`data.maybe.just`
+* :ref:`data.maybe.nothing`
+
+----------
+Operations
+----------
+
