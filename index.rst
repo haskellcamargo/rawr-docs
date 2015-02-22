@@ -74,3 +74,9 @@ Rawr also supports a Self/Javascript based prototype programming, in a much more
 .. literalinclude:: introduction/examples/prototype_based_programming.php
    :language: php
    :linenos:
+
+.. function:: foo(x)
+              foo(y, z)
+   :module: some.module.name
+
+   Return a line of text input from the user.
