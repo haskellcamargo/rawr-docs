@@ -10,18 +10,18 @@ The ``Tuple`` type is a different way of storing multiple values in a single val
 Operations
 ----------
 
-.. function:: fst :: Tuple<a, b> -> a
+.. function:: fst :: Tuple<a>(Int) -> Maybe a
 
-Extracts the first element of a pair.
+Returns ``Just`` the first element of a tuple (if it exists), or ``Nothing``.
 
 .. code-block:: php
 
   <?php
-    Tuple (Str ("Hello"), Int (100)) -> fst (); # => Str ("Hello")
+    Tuple (Str ("Hello"), Int (100)) -> fst (); # => Just (Str ("Hello"))
 
 .. function:: get :: (Tuple, Int) -> Maybe a
 
-Works like a 1-indexed array, where you get ``Just`` the element in the received index or ``Nothing``
+Works like a 1-indexed array, where you get ``Just`` the element in the received index or ``Nothing``.
 
 .. code-block:: php
 
@@ -29,14 +29,14 @@ Works like a 1-indexed array, where you get ``Just`` the element in the received
      Tuple (Int (10), Int (20)) -> get (Int (3)); # => Nothing
      Tuple (Int (10), Int (20)) -> get (Int (2)); # => Just (Int (2))
 
-.. function:: snd :: Tuple<a, b> -> b
+.. function:: snd :: Tuple<a, b>(Int) -> Maybe b
 
-Extracts the second element of a pair.
+Returns ``Just`` the second element of a tuple (if it exists), or ``Nothing``.
 
 .. code-block:: php
 
    <?php
-     Tuple (Str ("Hello"), Int (100)) -> snd (); # => Int (100)
+     Tuple (Str ("Hello"), Int (100)) -> snd (); # => Just (Int (100))
 
 .. function:: showType :: Tuple -> Str
 
@@ -47,3 +47,14 @@ Returns the type of the items contained in the tuples in format of a ``Data.Str`
    <?php
      Tuple (Str ("Hello"), Int (100)) -> showType ();
      # => Str ("Tuple<Data.Str, Data.Num.Int>(2)")
+
+.. function:: swap :: Tuple -> Maybe Tuple
+
+Swaps the values of a pair and returns `Just` the tuple or returns `Nothing` in case of not-a-pair.
+
+.. code-block:: php
+
+  <?php
+    Tuple (Float (3.14), Int (34)) -> swap ();
+    # => Just ( Tuple (Int (34), Float (3.14)))
+    Tuple () -> swap (); # => Nothing
