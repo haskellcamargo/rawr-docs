@@ -19,6 +19,16 @@ Extracts the first element of a pair.
   <?php
     Tuple (Str ("Hello"), Int (100)) -> fst (); # => Str ("Hello")
 
+.. function:: get :: (Tuple, Int) -> Maybe a
+
+Works like a 1-indexed array, where you get ``Just`` the element in the received index or ``Nothing``
+
+.. code-block:: php
+
+   <?php
+     Tuple (Int (10), Int (20)) -> get (Int (3)); # => Nothing
+     Tuple (Int (10), Int (20)) -> get (Int (2)); # => Just (Int (2))
+
 .. function:: snd :: Tuple<a, b> -> b
 
 Extracts the second element of a pair.
