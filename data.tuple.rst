@@ -18,3 +18,22 @@ Extracts the first element of a pair.
 
   <?php
     Tuple (Str ("Hello"), Int (100)) -> fst (); # => Str ("Hello")
+
+.. function:: snd :: Tuple<a, b> -> b
+
+Extracts the second element of a pair.
+
+.. code-block:: php
+
+   <?php
+     Tuple (Str ("Hello"), Int (100)) -> snd (); # => Int (100)
+
+.. function:: showType :: Tuple -> Str
+
+Returns the type of the items contained in the tuples in format of a ``Data.Str``.
+
+.. code-block:: php
+
+   <?php
+     Tuple (Str ("Hello"), Int (100)) -> showType ();
+     # => Str ("Tuple<Data.Str, Data.Num.Int>(2)")

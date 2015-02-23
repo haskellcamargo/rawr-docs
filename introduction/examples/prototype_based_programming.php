@@ -1,6 +1,6 @@
 <?php
   Type ("Employee") -> where (function ($type) {
-    $type -> derives (String);
+    $type -> derives (Str);
     $type -> with    (["Programmer"
                      , "Boss"
                      , "DBA"        => "Database administrator"]);
@@ -24,7 +24,7 @@
       -> putStrLn ();
     }
   );
-  
+
   $worker -> prototype -> sayPosition = Lambda (
     function ($self) {
       Str ("I'm a \(0) here.") -> format ($self -> position)

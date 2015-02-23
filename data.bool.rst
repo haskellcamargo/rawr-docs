@@ -45,7 +45,7 @@ Comparison of the difference of two objects or values of **same** type.
 Comparison of the equality of two objects or values of **same** type.
 
 .. code-block:: php
-   
+
    <?php
      Bool (True) -> diff (Bool (True));  # => Bool (True)
      Bool (True) -> diff (Bool (False)); # => Bool (False)
@@ -125,7 +125,7 @@ Alias for ``ifFalse``.
 .. code-block:: php
 
   <?php
-    Bool (True) 
+    Bool (True)
     -> ifTrue (Lambda (function () {}))
     -> otherwise (Lambda (function () {})); # Bool (True)
 

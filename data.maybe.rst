@@ -11,7 +11,7 @@ SE ISSO FOR PUBLICADO (E NÃO VAI), SAIBAM QUE **JAVA FEDE!**
 
 A ``Maybe`` type encapsulates an optional value. A value of type ``Maybe a`` either contains a value of type a (represented as ``Just a``), or it is empty (represented as ``Nothing``). Using ``Maybe`` is a good way to deal with errors or exceptional cases without resorting to drastic measures such as ``Data.Error``.
 
-The ``Maybe`` type is also a monad. It is a simple kind of error monad, where all errors are represented by ``Nothing``. A richer error monad can be built using the ``Either`` (``Data.Either``) type. 
+The ``Maybe`` type is also a monad. It is a simple kind of error monad, where all errors are represented by ``Nothing``. A richer error monad can be built using the ``Either`` (``Data.Either``) type.
 
 ------------
 Constructors
@@ -32,7 +32,7 @@ Equivalent to Haskell's ``>>=`` operator. Its first argument is a value in a mon
 
   <?php
     $age = Maybe (Int (18));
-    $age 
+    $age
     -> bind (function ($val) {
          return $val -> inc ();
        })
@@ -55,7 +55,7 @@ Extracts the element out of a ``Just`` and returns an error if its argument is `
 Takes a ``Maybe`` value and a default value. If the ``Maybe`` is ``Nothing``, it returns the default values; otherwise, it returns the value contained in the ``Maybe``.
 
 .. code-block:: php
-   
+
    <?php
      Maybe (null)
      -> maybe (Str ("Pass")); # => Str ("Pass")
