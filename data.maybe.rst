@@ -30,7 +30,7 @@ Equivalent to Haskell's ``>>=`` operator. Its first argument is a value in a mon
     $age 
     -> bind (function ($val) {
          return $val -> inc ();
-       }) 
+       })
     -> bind (function ($val) {
          return $val -> inc ();
        }); # => Maybe Int (20)
