@@ -131,7 +131,7 @@ Alias for ``ifFalse``.
 
 .. function:: thenElse :: (Bool, Func, Func) -> Bool
 
-Equivalent to ``iFtrue`` and ``ifFalse``.
+Equivalent to ``ifTrue`` and ``ifFalse``.
 
 .. code-block:: php
 
