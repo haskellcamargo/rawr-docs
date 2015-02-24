@@ -22,17 +22,37 @@ Constructors
 Operations
 ----------
 
+.. function:: either :: (Either a b, Func, Func) -> c
 
+Case analysis for the ``Either`` type. If the value is ``Left a``, apply the first function to a; if it is `Right b`, apply the second function to b.
 
+.. code-block:: php
 
-  # Case analysis for the `Either` type. If the value is `Left a`, apply the
-    # first function to a; if it is `Right b`, apply the second function to b.
-    abstract function either($f, $g); # :: (Either a b, Func, Func) -> c
+   <?php
+     Either (null) -> either (
+       # Left a
+       function ($a) {
+         return Int (0);
+       },
+       # Right b
+       function ($b) {
+         return Int ($b);
+       });
 
-    # Return `Bool (True)` if the given value is a `Left`-value, `Bool (False)`
-    # otherwise.
-    abstract function isLeft(); # :: Either a b -> Bool
+.. function:: isLeft :: Either a b -> Bool
 
-    # Return `Bool (True)` if the given value is a `Right`-value, `Bool (False)`
-    # otherwise.
-    abstract function isRight(); # :: Either a b -> Bool
+Return ``Bool (True)`` if the given value is a ``Left``-value, ``Bool (False)`` otherwise.
+
+.. code-block:: php
+
+  <?php
+    Either (null) -> isLeft (); # Bool (True)
+
+.. function:: isRight :: Either a b -> Bool
+
+Return ``Bool (True)`` if the given value is a ``Left``-value, ``Bool (False)`` otherwise.
+
+.. code-block:: php
+
+  <?php
+    Either (Int (10)) -> isRight (); # Bool (True)
